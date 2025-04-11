@@ -54,6 +54,13 @@ const sampleKeymaps = [
     }
 ];
 
+fetch("example.json").then(response => response.json()).then(data => {
+    keymaps = data;
+    filterKeymaps();
+    updateStats();
+    pickRandomCard();
+    });
+
 // DOM elements
 const fileUpload = document.getElementById('file-upload');
 const modeSelect = document.getElementById('mode-select');

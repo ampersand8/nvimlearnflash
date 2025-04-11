@@ -7,7 +7,7 @@ WORKDIR /usr/share/nginx/html
 COPY index.html .
 COPY style.css .
 COPY script.js .
-
+COPY example.json .
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80

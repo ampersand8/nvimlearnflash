@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neovim Keymaps Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Neovim Keymaps Flashcards</h1>
+        
+        <!-- Upload section -->
+        <div class="upload-container">
+            <label class="file-upload">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <span class="file-upload-text">Upload your keymaps JSON</span>
+                <input type="file" id="file-upload" accept=".json" style="display: none;">
+            </label>
+            <div id="loading" class="loading hidden">Loading...</div>
+            <div id="error-msg" class="error-msg hidden"></div>
+        </div>
+        
+        <!-- Mode filter -->
+        <div class="mode-filter">
+            <select id="mode-select">
+                <option value="All">All Modes</option>
+            </select>
+        </div>
+        
+        <!-- Flashcard -->
+        <div id="flashcard" class="card">
+            <div class="card-header">
+                <h2 id="card-mode">Loading...</h2>
+            </div>
+            <div class="card-body">
+                <div class="card-question">
+                    <p id="card-desc">Please load keymap data</p>
+                </div>
+                <div id="card-answer" class="card-answer hidden">
+                    <p id="card-keys"></p>
+                </div>
+                <div class="card-hint">
+                    <span id="card-hint">Click to reveal keybinding</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Next button -->
+        <button id="next-btn" class="btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <polyline points="1 20 1 14 7 14"></polyline>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+            Next Card
+        </button>
+        
+        <!-- Stats -->
+        <div class="stats">
+            <p id="stats-available"></p>
+            <p id="stats-viewed" class="stats-viewed">Cards viewed: 0</p>
+        </div>
+    </div>
+   <script src="script.js"></script>
+</body>
+</html>
